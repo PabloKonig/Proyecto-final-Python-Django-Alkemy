@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Listado de proveedores</h2><br>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">DNI</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proveedor in lista_de_proveedores %}
+            <tr>
+                <td>{{proveedor.id}}</td> 
+                <td>{{proveedor.nombre}}</td> 
+                <td>{{proveedor.apellido}}</td>
+                <td>{{proveedor.dni}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
+        

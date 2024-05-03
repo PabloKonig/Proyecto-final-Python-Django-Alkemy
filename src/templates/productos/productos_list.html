@@ -1,0 +1,29 @@
+{% extends "base.html" %} # Se toma como base el archivo base.html y se inserta el bloque
+{% load static %}
+{% block content %}
+<h2>Listado de productos</h2><br>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Foto</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Proveedor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in lista_de_productos %}
+            <tr>
+                <td><a href="">
+                    <img src="{{ producto.foto.url }}" width="50px"/>
+                </a></td>
+                <td>{{producto.nombre}}</td> 
+                <td>{{producto.precio}}</td> 
+                <td>{{producto.stock_actual}}</td>
+                <td>{{producto.proveedor.nombre}} {{producto.proveedor.apellido}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
