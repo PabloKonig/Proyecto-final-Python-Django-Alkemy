@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('', include('compra.urls', namespace='compra')),
     path('admin/', admin.site.urls),
     path('compras/', include('compra.urls', namespace='compra')),
 ]
