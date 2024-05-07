@@ -1,10 +1,10 @@
-{% load static %}       
+{% load static %}       <!-- Carga la ruta a la carpeta static -->
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="{% static '/img/favicon.ico' %}">
+    <link rel="icon" type="image/x-icon" href="{% static '/img/favicon.ico' %}"> <!-- Utiliza la ruta relativa a static -->
     <title>StockControl</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
@@ -23,7 +23,7 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Menu
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu">    <!-- url permite enlaces relativos referenciando un path de urls.py -->
                   <li><a class="dropdown-item" href="{% url 'compra:proveedores_list' %}">Listado de Proveedores</a></li>
                   <li><a class="dropdown-item" href="{% url 'compra:productos_list' %}">Listado de Productos</a></li>
                   <li><hr class="dropdown-divider"></li>
@@ -37,7 +37,7 @@
           </div>
         </div>
       </nav>      
-      {% block content %}
+      {% block content %}     <!-- Aqui se insertan las demás plantillas que extienden a base.html -->
       {% endblock content %}
       <footer class="bg-dark text-white py-3 my-4">
         <div class="container">
