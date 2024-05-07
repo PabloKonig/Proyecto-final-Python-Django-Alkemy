@@ -16,7 +16,9 @@ class Producto(models.Model):
     precio = models.FloatField()
     stock_actual = models.IntegerField()
     foto = models.ImageField(upload_to='productos_img/', default='producto_default.png')
-    proveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
+    proveedor = models.ForeignKey(Proveedor, on_delete=models.PROTECT)  #Que no se eliminen los productos relacionados al eliminar un proveedor.
 
     def __str__(self):
         return F"Nombre: {self.nombre.upper()} - Precio: {self.precio} - Stock: {self.stock_actual} - Proveedor: {self.proveedor.nombre} {self.proveedor.apellido}"
+    
+    

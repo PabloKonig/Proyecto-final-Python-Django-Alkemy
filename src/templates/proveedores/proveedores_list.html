@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Listado de proveedores</h2><br>
+<h2 class="my-4">Listado de proveedores</h2>
     <table class="table table-hover">
-        <thead>
+        <thead class="table-secondary">
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nombre</th>
@@ -22,5 +22,7 @@
             {% endfor %}
         </tbody>
     </table>
+    <a class="btn btn-outline-primary m-3" href="{% url 'compra:proveedores_create' %}" role="button">Agregar proveedor</a>
+    <a class="btn btn-outline-primary m-3" href="{% url 'inicio' %}" role="button">Inicio</a>
 {% endblock content %}
         

@@ -18,9 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView 
 
 urlpatterns = [
-    path('', include('compra.urls', namespace='compra')),
+    path('', TemplateView.as_view(template_name="inicio/inicio.html"), name='inicio'),
     path('admin/', admin.site.urls),
     path('compras/', include('compra.urls', namespace='compra')),
 ]

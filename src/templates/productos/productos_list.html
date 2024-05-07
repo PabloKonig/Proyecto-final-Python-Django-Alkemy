@@ -1,7 +1,6 @@
 {% extends "base.html" %} # Se toma como base el archivo base.html y se inserta el bloque
-{% load static %}
 {% block content %}
-<h2>Listado de productos</h2><br>
+<h2 class="my-4">Listado de productos</h2>
     <table class="table table-hover">
         <thead class="table-secondary">
             <tr>
@@ -26,4 +25,6 @@
             {% endfor %}
         </tbody>
     </table>
+    <a class="btn btn-outline-primary m-3" href="{% url 'compra:productos_create' %}" role="button">Agregar producto</a>
+    <a class="btn btn-outline-primary m-3" href="{% url 'inicio' %}" role="button">Inicio</a>
 {% endblock content %}
