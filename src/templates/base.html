@@ -1,4 +1,4 @@
-{% load static %}       <!-- Carga la ruta a la carpeta static -->
+{% load static %}       <!-- Carga las etiquetas estáticas de Django definiendo static (su ruta)-->
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,7 +23,7 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Menu
                 </a>
-                <ul class="dropdown-menu">    <!-- url permite enlaces relativos referenciando un path de urls.py -->
+                <ul class="dropdown-menu">    <!-- url permite generar dinámicamente enlaces referenciando un path de urls.py -->
                   <li><a class="dropdown-item" href="{% url 'compra:proveedores_list' %}">Listado de Proveedores</a></li>
                   <li><a class="dropdown-item" href="{% url 'compra:productos_list' %}">Listado de Productos</a></li>
                   <li><hr class="dropdown-divider"></li>
